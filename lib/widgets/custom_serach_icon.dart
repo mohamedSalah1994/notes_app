@@ -13,7 +13,7 @@ import 'package:flutter/material.dart';
                 borderRadius: BorderRadius.circular(16),
               ),
               child: IconButton(onPressed: (){},
-               icon: Icon(Icons.search) 
+               icon: const Icon(Icons.search) 
                ),
              );
   }
