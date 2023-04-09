@@ -4,6 +4,7 @@ import 'package:notes_app/models/note_model.dart';
 
 import 'package:notes_app/widgets/custom_app_bar.dart';
 import 'package:notes_app/widgets/custom_text_field.dart';
+import 'package:notes_app/widgets/edit_note_colors_list_view.dart';
 
 import '../cubits/notes_cubit/notes_cubit.dart';
 
@@ -32,19 +33,17 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
               widget.note.subTitle = content ?? widget.note.subTitle;
               widget.note.save();
               BlocProvider.of<NotesCubit>(context).fetchAllNotes();
-               Navigator.pop(context);
+              Navigator.pop(context);
             },
           ),
           const SizedBox(
             height: 32,
           ),
           CustomTextField(
-            
             onChanged: (value) {
               title = value;
             },
             hint: widget.note.title,
-
           ),
           const SizedBox(
             height: 16,
@@ -55,7 +54,13 @@ class _EditNoteViewBodyState extends State<EditNoteViewBody> {
             },
             hint: widget.note.subTitle,
             maxLines: 5,
-          )
+          ),
+          const SizedBox(
+            height: 16,
+          ),
+           EditNoteColorsListView(
+            note: widget.note,
+           )
         ],
       ),
     );

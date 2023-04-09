@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/container.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:notes_app/models/note_model.dart';
 
 import '../widgets/edit_note_view_body.dart';
